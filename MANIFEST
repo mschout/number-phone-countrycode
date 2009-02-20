@@ -1,6 +1,8 @@
 Changes
+lib/Number/Phone/CountryCode.pm
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 README
-t/Number-Phone-CountryCode.t
-lib/Number/Phone/CountryCode.pm
+t/basic.t
+t/codes.t
