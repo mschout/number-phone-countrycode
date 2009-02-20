@@ -252,6 +252,68 @@ my %Codes = (
     ZW => ['263',  '110',    '0']      # Zimbabwe
 );
 
+=head1 NAME
+
+Number::Phone::CountryCode - Country phone dialing prefixes
+
+=head1 SYNOPSIS
+
+ use Number::Phone::CountryCode;
+
+ # retrieve object of United Kingdom codes.
+ my $pc = Number::Phone::CountryCode->new('GB');
+
+ print $pc->country;       # ISO 3166 code, e.g: GB
+ print $pc->country_code;  # country prefix
+ print $pc->idd_prefix;    # IDD prefix
+ print $pc->ndd_prefix;    # NDD prefix
+
+ # get list of supported ISO 3166 codes
+ my @countries = Number::Phone::CountryCode->countries;
+
+See below for description of the country/IDD/NDD prefixes.
+
+=head1 DESCRIPTION
+
+This module provides an interface to lookup country specific dialing prefixes.
+These prefixes are useful when working with phone numbers from different
+countries.  The follwing codes are available for each country:
+
+=head2 Country Code
+
+This is the national prefix to be used with dialing B<to> a country B<from>
+another country.
+
+=head2 National Direct Dialing Prefix (NDD)
+
+This is the prefix used to make a call B<within a country> from one city to
+another.  This prefix may not be necessary when calling another city in the
+same vicinity.  This is followed by the city or area code for the place you are
+calling.  For example, in the US, the NDD prefix is "1", so you must dial 1
+before the area code to place a long distance call within the country.
+
+=head2 International Direct Dialing Prefix (IDD)
+
+This is the prefix needed to make a call B<from a country> to another country.
+This is followed by the country code for the country you are calling.  For
+example, when calling another country from the US, you must dial 011.
+
+=cut
+
+=head1 CONSTRUCTOR
+
+=over 4
+
+=item new($country)
+
+Constructs a new Number::Phone::CountryCode object.  C<$country> is the two
+digit ISO 3166 country code for the country you wish to look up.  Returns
+C<undef> if the country code did not match one of the supported countries.
+
+=back
+
+=cut
+
 sub new {
     my ($class, $country) = @_;
 
@@ -263,66 +325,108 @@ sub new {
     return unless defined $data;
 
     return $class->SUPER::new({
-        country => $country,
+        country      => $country,
         country_code => $data->[0],
         idd_prefix   => $data->[1],
         ndd_prefix   => $data->[2]
     });
 }
 
+=head1 METHODS
+
+The following methods are available
+
+=over 4
+
+=item country
+
+the ISO 3166 country code for this country
+
+=item country_code
+
+The national prefix for this country
+
+=item ndd_prefix
+
+The NDD prefix for this country. Note that this might be undef if no prefix is
+necessary.
+
+=item idd_prefix
+
+The IDD prefix for this country.  Note that this might be undef if no prefix is
+necessary.
+
+=back
+
+=cut
+
+=head1 CLASS METHODS
+
+The following class methods are available (may be called without constructing
+an object).
+
+=over 4
+
+=item countries
+
+Returns a list of all ISO 3166 country codes supported by this module.
+
+=cut
+
 sub countries {
     return sort keys %Codes;
 }
+
+=item is_supported($country)
+
+Returns true if the given country is supported, false otherwise.  C<$country>
+is a 2 character ISO 3166 country code.
+
+=cut
+
+sub is_supported {
+    my ($class, $code) = @_;
+
+    $code = uc $code;
+
+    return defined $Codes{$code} ? 1 : 0;
+}
+
+=back
+
+=cut
 
 1;
 
 __END__
 
-=head1 NAME
+=head1 SOURCE
 
-Number::Phone::CountryCode - Perl extension for blah blah blah
+You can contribute to or fork this project via github:
 
-=head1 SYNOPSIS
+http://github.com/mschout/number-phone-countrycode/tree/master
 
-  use Number::Phone::CountryCode;
-  blah blah blah
+ git clone git://github.com/mschout/number-phone-countrycode.git
 
-=head1 DESCRIPTION
+=head1 BUGS / FEEDBACK
 
-Stub documentation for Number::Phone::CountryCode, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
+Please report any bugs or feature requests to
+bug-number-phone-countrycode@rt.cpan.org, or through the web interface at
+http://rt.cpan.org
 
-Blah blah blah.
-
-=head2 EXPORT
-
-None by default.
-
-
-
-=head1 SEE ALSO
-
-Mention other useful documentation such as the documentation of
-related modules or operating system documentation (such as man pages
-in UNIX), or any relevant external documentation such as RFCs or
-standards.
-
-If you have a mailing list set up for your module, mention it here.
-
-If you have a web site set up for your module, mention it here.
+I welcome feedback, and additions/corrections to the country code data
+contained within this module.
 
 =head1 AUTHOR
 
-Michael Schout, E<lt>mschout@localdomainE<gt>
+Michael Schout, E<lt>mschout@gkg.net<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (C) 2009 by Michael Schout
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.8 or,
-at your option, any later version of Perl 5 you may have available.
-
+This library is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself, either Perl version 5.8.0 or, at your option,
+any later version of Perl 5 you may have available.
 
 =cut
