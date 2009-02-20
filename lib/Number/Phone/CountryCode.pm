@@ -235,6 +235,7 @@ my %Codes = (
     UA => ['380',  '810',    '8'],     # Ukraine (IDD really 8**10)
     AE => ['971',   '00',  undef],     # United Arab Emirates
     GB => [ '44',   '00',    '0'],     # United Kingdom
+    US => [  '1',  '011',    '1'],     # United States
     UY => ['598',   '00',    '0'],     # Uruguay
     PG => [  '1',  '011',    '1'],     # Papua New Guinea
     UZ => ['998',  '810',    '8'],     # Uzbekistan (IDD really 8**10)
