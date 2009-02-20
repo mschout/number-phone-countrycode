@@ -269,6 +269,10 @@ sub new {
     });
 }
 
+sub countries {
+    return sort keys %Codes;
+}
+
 1;
 
 __END__
