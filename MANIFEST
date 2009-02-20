@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Number-Phone-CountryCode.t
+lib/Number/Phone/CountryCode.pm
