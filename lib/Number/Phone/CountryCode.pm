@@ -1,7 +1,16 @@
 package Number::Phone::CountryCode;
 
 use strict;
+use base qw(Class::Accessor);
 
+__PACKAGE__->mk_accessors(qw(country
+                             country_code
+                             idd_prefix
+                             ndd_prefix));
+
+our $VERSION = '0.01';
+
+# Codes hash
 # ISO code maps to 3 element array containing:
 # Country prefix
 # IDD prefix
@@ -29,7 +38,7 @@ my %Codes = (
     BD => ['880',   '00',    '0'],     # Bangladesh
     BB => [  '1',  '011',    '1'],     # Barbados
     AG => [  '1',  '011',    '1'],     # Antigua and Barbuda
-    BY => ['375', '8~10',    '8'],     # Belarus
+    BY => ['375',  '810',    '8'],     # Belarus (IDD really 8**10)
     BE => [ '32',   '00',    '0'],     # Belgium
     BZ => ['501',   '00',    '0'],     # Belize
     BJ => ['229',   '00',  undef],     # Benin
@@ -86,7 +95,7 @@ my %Codes = (
     PF => ['689',   '00',  undef],     # French Polynesia
     GA => ['241',   '00',  undef],     # Gabonese Republic
     GM => ['220',   '00',  undef],     # Gambia
-    GS => ['995', '8~10',    '8'],     # South Georgia and the South Sandwich Islands
+    GS => ['995',  '810',    '8'],     # South Georgia and the South Sandwich Islands (IDD really 8**10)
     DE => [ '49',   '00',    '0'],     # Germany
     GH => ['233',   '00',  undef],     # Ghana
     GI => ['350',   '00',  undef],     # Gibraltar
@@ -113,7 +122,7 @@ my %Codes = (
     JM => [  '1',  '011',    '1'],     # Jamaica
     JP => [ '81',  '001',  undef],     # Japan
     JO => ['962',   '00',    '0'],     # Jordan
-    KZ => [  '7', '8~10',    '8'],     # Kazakhstan
+    KZ => [  '7',  '810',    '8'],     # Kazakhstan (IDD really 8**10)
     KE => ['254',  '000',  undef],     # Kenya
     KI => ['686',   '00',    '0'],     # Kiribati
     KP => ['850',   '00',    '0'],     # Korea, Democratic People's Republic of
@@ -180,7 +189,7 @@ my %Codes = (
     QA => ['974',    '0',    '0'],     # Qatar
     RE => ['262',   '00',    '0'],     # Reunion
     RO => [ '40',   '00',    '0'],     # Romania
-    BN => [  '7', '8~10',  undef],     # Brunei Darussalam
+    BN => [  '7',  '810',  undef],     # Brunei Darussalam (IDD really 8**10)
     RW => ['250',   '00',    '0'],     # Rwanda
     SH => ['290',   '00',  undef],     # Saint Helena
     KN => [  '1',  '011',    '1'],     # Saint Kitts and Nevis
@@ -210,7 +219,7 @@ my %Codes = (
     CH => [ '41',   '00',    '0'],     # Switzerland
     AT => ['963',   '00',  undef],     # Austria
     TW => ['886',  '002',  undef],     # Taiwan, Province of China
-    TJ => ['992', '8~10',    '8'],     # Tajikistan
+    TJ => ['992',  '810',    '8'],     # Tajikistan (IDD really 8**10)
     TZ => ['255',  '000',  undef],     # Tanzania, United Republic of
     TH => [ '66',  '001',  undef],     # Thailand
     TG => ['228',   '00',  undef],     # Togo
@@ -219,16 +228,16 @@ my %Codes = (
     TT => [  '1',  '011',    '1'],     # Trinidad and Tobago
     TN => ['216',   '00',    '0'],     # Tunisia
     TR => [ '90',   '00',    '0'],     # Turkey
-    TM => ['993', '8~10',    '8'],     # Turkmenistan
+    TM => ['993',  '810',    '8'],     # Turkmenistan (IDD really 8**10)
     TC => [  '1',  '011',    '1'],     # Turks and Caicos Islands
     TV => ['688',   '00',  undef],     # Tuvalu
     UG => ['256',  '000',  undef],     # Uganda
-    UA => ['380', '8~10',    '8'],     # Ukraine
+    UA => ['380',  '810',    '8'],     # Ukraine (IDD really 8**10)
     AE => ['971',   '00',  undef],     # United Arab Emirates
     GB => [ '44',   '00',    '0'],     # United Kingdom
     UY => ['598',   '00',    '0'],     # Uruguay
     PG => [  '1',  '011',    '1'],     # Papua New Guinea
-    UZ => ['998', '8~10',    '8'],     # Uzbekistan
+    UZ => ['998',  '810',    '8'],     # Uzbekistan (IDD really 8**10)
     VU => ['678',   '00',  undef],     # Vanuatu
     VA => ['379',   '00',  undef],     # Holy See (Vatican City State)
     VE => [ '58',   '00',  undef],     # Venezuela
@@ -242,7 +251,23 @@ my %Codes = (
     ZW => ['263',  '110',    '0']      # Zimbabwe
 );
 
-our $VERSION = '0.01';
+sub new {
+    my ($class, $country) = @_;
+
+    $country = uc $country;
+
+    my $data = $Codes{$country};
+
+    # return nothing if no data for this country code.
+    return unless defined $data;
+
+    return $class->SUPER::new({
+        country => $country,
+        country_code => $data->[0],
+        idd_prefix   => $data->[1],
+        ndd_prefix   => $data->[2]
+    });
+}
 
 1;
 
