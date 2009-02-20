@@ -3,10 +3,10 @@ package Number::Phone::CountryCode;
 use strict;
 use base qw(Class::Accessor);
 
-__PACKAGE__->mk_accessors(qw(country
-                             country_code
-                             idd_prefix
-                             ndd_prefix));
+__PACKAGE__->mk_ro_accessors(qw(country
+                                country_code
+                                idd_prefix
+                                ndd_prefix));
 
 our $VERSION = '0.01';
 
