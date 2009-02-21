@@ -115,6 +115,7 @@ my %Codes = (
     IE => ['354',   '00',    '0'],     # Ireland
     IO => [ '91',   '00',    '0'],     # British Indian Ocean Territory
     ID => [ '62',  '001',  undef],     # Indonesia
+    IN => [ '91',   '00',    '0'],     # India
     IO => [ '98',   '00',    '0'],     # British Indian Ocean Territory
     IR => ['964',   '00',    '0'],     # Iran, Islamic Republic of
     IL => ['972',   '00',  undef],     # Israel

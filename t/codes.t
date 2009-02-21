@@ -4,7 +4,7 @@
 #
 
 use strict;
-use Test::More tests => 1041;
+use Test::More tests => 1046;
 
 use_ok('Number::Phone::CountryCode') or exit 1;
 
@@ -16,7 +16,7 @@ while (<DATA>) {
     $ndd = undef unless length $ndd;
 
     my $obj = Number::Phone::CountryCode->new($country);
-    isa_ok $obj, 'Number::Phone::CountryCode';
+    isa_ok $obj, 'Number::Phone::CountryCode', "object for country $country";
 
     SKIP: {
         skip "no data for $country", 4 unless defined $obj;
@@ -114,6 +114,7 @@ HU:36:00:06
 ID:62:001:
 IE:354:00:0
 IL:972:00:
+IN:91:00:0
 IO:98:00:0
 IR:964:00:0
 IT:39:00:

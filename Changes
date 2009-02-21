@@ -2,6 +2,7 @@ Revision history for Number::Phone::CountryCode.
 
 CURRENT
     - Makefile.PL: only require version 5.008
+    - add support for: India (IN)
 
 0.01  Fri Feb 20 11:11:59 2009
     - original version
