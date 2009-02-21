@@ -4,7 +4,7 @@
 #
 
 use strict;
-use Test::More tests => 1056;
+use Test::More tests => 1051;
 
 use_ok('Number::Phone::CountryCode') or exit 1;
 
@@ -20,10 +20,10 @@ while (<DATA>) {
 
     SKIP: {
         skip "no data for $country", 4 unless defined $obj;
-        is $obj->country, $country;
-        is $obj->country_code, $prefix;
-        is $obj->idd_prefix, $idd;
-        is $obj->ndd_prefix, $ndd;
+        is $obj->country, $country, "$country code";
+        is $obj->country_code, $prefix, "$country country prefix";
+        is $obj->idd_prefix, $idd, "$country idd prefix";
+        is $obj->ndd_prefix, $ndd, "$country ndd prefix";
     }
 }
 
@@ -54,7 +54,7 @@ BH:973:00:
 BI:257:90:
 BJ:229:00:
 BM:1:011:1
-BN:7:810:
+BN:673:00:0
 BO:591:00:0
 BR:55:00:0
 BS:1:011:1
@@ -82,7 +82,7 @@ DK:45:00:
 DO:1:011:
 DZ:213:00:7
 EC:593:00:0
-EE:676:00:
+EE:372:00:
 EG:20:00:0
 EH:685:0:
 ER:291:00:
@@ -96,11 +96,11 @@ FR:33:00:
 GA:241:00:
 GB:44:00:0
 GD:1:011:4
-GF:592:001:0
+GF:594:00:
 GH:233:00:
 GI:350:00:
 GL:299:00:
-GM:260:00:0
+GM:220:00:
 GP:590:00:
 GQ:240:00:
 GR:30:00:
@@ -116,7 +116,6 @@ ID:62:001:
 IE:354:00:0
 IL:972:00:
 IN:91:00:0
-IO:98:00:0
 IR:964:00:0
 IT:39:00:
 JM:1:011:1
@@ -142,7 +141,7 @@ LS:266:00:0
 LT:370:00:8
 LU:352:00:
 LV:371:00:8
-LY:223:00:0
+LY:218:00:0
 MA:212:00:
 MC:377:00:0
 MD:373:00:0
@@ -175,11 +174,11 @@ NZ:64:00:0
 PA:507:00:
 PE:51:00:0
 PF:689:00:
-PG:1:011:1
+PG:675:05:
 PH:63:00:0
 PK:92:00:0
 PL:48:00:0
-PM:34:00:
+PM:508:00:0
 PR:1:011:1
 PS:970:00:0
 PT:351:00:
