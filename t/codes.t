@@ -4,7 +4,7 @@
 #
 
 use strict;
-use Test::More tests => 1046;
+use Test::More tests => 1051;
 
 use_ok('Number::Phone::CountryCode') or exit 1;
 
@@ -69,6 +69,7 @@ CH:41:00:0
 CI:225:00:0
 CL:56:00:0
 CM:237:00:
+CN:86:00:0
 CO:57:009:09
 CR:506:00:
 CV:238:0:

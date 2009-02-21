@@ -55,6 +55,7 @@ my %Codes = (
     KH => ['855',  '001',    '0'],     # Cambodia
     CM => ['237',   '00',  undef],     # Cameroon
     CA => [  '1',  '011',    '1'],     # Canada
+    CN => [ '86',   '00',    '0'],     # China
     CV => ['238',    '0',  undef],     # Cape Verde Islands
     KY => [  '1',  '011',    '1'],     # Cayman Islands
     CF => ['236',   '00',  undef],     # Central African Republic
