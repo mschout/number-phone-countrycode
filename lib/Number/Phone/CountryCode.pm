@@ -251,7 +251,8 @@ my %Codes = (
     EH => ['685',    '0',  undef],     # Western Sahara
     YE => ['967',   '00',    '0'],     # Yemen
     GM => ['260',   '00',    '0'],     # Gambia
-    ZW => ['263',  '110',    '0']      # Zimbabwe
+    ZW => ['263',  '110',    '0'],     # Zimbabwe
+    TD => ['235',   '15',  undef]      # Chad
 );
 
 =head1 NAME
