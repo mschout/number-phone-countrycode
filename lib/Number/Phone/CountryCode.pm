@@ -56,6 +56,7 @@ my %Codes = (
     CC => [ '61', '0011',    '0'],     # Cocos (Keeling) Islands
     CD => ['243',   '00',  undef],     # Congo (Dem. Rep. of / Zaire)
     CF => ['236',   '00',  undef],     # Central African Republic
+    CG => ['242',   '00',  undef],     # Congo
     CH => [ '41',   '00',    '0'],     # Switzerland
     CI => ['225',   '00',    '0'],     # Cote D'Ivoire
     CL => [ '56',   '00',    '0'],     # Chile
