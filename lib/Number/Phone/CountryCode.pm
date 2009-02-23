@@ -53,6 +53,7 @@ my %Codes = (
     BY => ['375',  '810',    '8'],     # Belarus (IDD really 8**10)
     BZ => ['501',   '00',    '0'],     # Belize
     CA => [  '1',  '011',    '1'],     # Canada
+    CC => [ '61', '0011',    '0'],     # Cocos (Keeling) Islands
     CD => ['243',   '00',  undef],     # Congo (Dem. Rep. of / Zaire)
     CF => ['236',   '00',  undef],     # Central African Republic
     CH => [ '41',   '00',    '0'],     # Switzerland
