@@ -92,6 +92,7 @@ my %Codes = (
     GA => ['241',   '00',  undef],     # Gabonese Republic
     GB => [ '44',   '00',    '0'],     # United Kingdom
     GD => [  '1',  '011',    '4'],     # Grenada
+    GE => ['995',  '810',    '8'],     # Georgia
     GF => ['594',   '00',  undef],     # French Guiana
     GH => ['233',   '00',  undef],     # Ghana
     GI => ['350',   '00',  undef],     # Gibraltar
