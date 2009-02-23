@@ -65,6 +65,7 @@ my %Codes = (
     CN => [ '86',   '00',    '0'],     # China
     CO => [ '57',  '009',   '09'],     # Colombia
     CR => ['506',   '00',  undef],     # Costa Rica
+    CU => [ '53',  '119',    '0'],     # Cuba
     CV => ['238',    '0',  undef],     # Cape Verde Islands
     CX => [ '61', '0011',    '0'],     # Christmas Island
     CY => ['357',   '00',  undef],     # Cyprus
