@@ -59,6 +59,7 @@ my %Codes = (
     CG => ['242',   '00',  undef],     # Congo
     CH => [ '41',   '00',    '0'],     # Switzerland
     CI => ['225',   '00',    '0'],     # Cote D'Ivoire
+    CK => ['682',   '00',   '00'],     # Cook Islands
     CL => [ '56',   '00',    '0'],     # Chile
     CM => ['237',   '00',  undef],     # Cameroon
     CN => [ '86',   '00',    '0'],     # China
