@@ -73,6 +73,7 @@ my %Codes = (
     DE => [ '49',   '00',    '0'],     # Germany
     DJ => ['253',   '00',  undef],     # Djibouti
     DK => [ '45',   '00',  undef],     # Denmark
+    DM => [  '1',  '011',      1],     # Dominica
     DO => [  '1',  '011',      1],     # Dominican Republic
     DZ => ['213',   '00',    '7'],     # Algeria
     EC => ['593',   '00',    '0'],     # Ecuador
