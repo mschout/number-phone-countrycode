@@ -4,7 +4,7 @@
 #
 
 use strict;
-use Test::More tests => 1106;
+use Test::More tests => 1121;
 
 use_ok('Number::Phone::CountryCode') or exit 1;
 
@@ -128,6 +128,7 @@ IL:972:00:0
 IN:91:00:0
 IQ:964:00:0
 IR:98:00:0
+IS:354:00:0
 IT:39:00:
 JM:1:011:1
 JO:962:00:0
@@ -156,9 +157,11 @@ LY:218:00:0
 MA:212:00:
 MC:377:00:0
 MD:373:00:0
+ME:382:99:0
 MG:261:00:0
 MH:692:011:1
 MK:389:00:0
+ML:223:00:0
 MN:976:001:0
 MO:853:00:0
 MP:1:011:1
