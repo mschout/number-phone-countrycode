@@ -6,7 +6,8 @@ CURRENT
       Guinea (GN), Guam (GU), Guyana (GY), Iceland (IS), Montenegro (ME),
       Mali (ML), Laos (LA), Malta (MT), Myanmar (MM), Nepal (NP),
       Oman (OM), Russia (RU), Svalbard and Jan Mayen (SJ), Syria (SY),
-      Tonga Islands (TO), Zambia (ZM), Bouvet Island
+      Tonga Islands (TO), Zambia (ZM), Bouvet Island,
+      British Indian Ocean Territory (IO)
 
 0.02  Sat Feb 20 2009
     - Makefile.PL: only require version 5.008

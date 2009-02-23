@@ -4,12 +4,13 @@
 #
 
 use strict;
-use Test::More tests => 1176;
+use Test::More tests => 1181;
 
 use_ok('Number::Phone::CountryCode') or exit 1;
 
 while (<DATA>) {
     chomp;
+
     my ($country, $prefix, $idd, $ndd) = split /:/;
 
     $idd = undef unless length $idd;
@@ -127,6 +128,7 @@ ID:62:001:0
 IE:353:00:0
 IL:972:00:0
 IN:91:00:0
+IO:246:00:
 IQ:964:00:0
 IR:98:00:0
 IS:354:00:0
