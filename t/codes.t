@@ -4,7 +4,7 @@
 #
 
 use strict;
-use Test::More 'no_plan';
+use Test::More tests => 1176;
 
 use_ok('Number::Phone::CountryCode') or exit 1;
 
@@ -59,6 +59,7 @@ BO:591:00:0
 BR:55:00:0
 BS:1:011:1
 BT:975:00:
+BV:47:00:
 BW:267:00:
 BY:375:810:8
 BZ:501:00:0

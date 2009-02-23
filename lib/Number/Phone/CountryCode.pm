@@ -48,6 +48,7 @@ my %Codes = (
     BR => [ '55',   '00',    '0'], # Brazil
     BS => [  '1',  '011',    '1'], # Bahamas
     BT => ['975',   '00',  undef], # Bhutan
+    BV => [ '47',   '00',  undef], # Bouvet Island - Norway
     BW => ['267',   '00',  undef], # Botswana
     BY => ['375',  '810',    '8'], # Belarus (IDD really 8**10)
     BZ => ['501',   '00',    '0'], # Belize
