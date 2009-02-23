@@ -104,6 +104,7 @@ my %Codes = (
     GR => [ '30',   '00',  undef],     # Greece
     GS => ['995',  '810',    '8'],     # South Georgia and the South Sandwich Islands (IDD really 8**10)
     GT => ['502',   '00',  undef],     # Guatemala
+    GU => [  '1',  '011',    '1'],     # Guam
     GW => ['245',   '00',  undef],     # Guinea-Bissau
     HK => ['852',  '001',  undef],     # Hong Kong
     HN => ['504',   '00',    '0'],     # Honduras
