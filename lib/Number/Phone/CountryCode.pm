@@ -222,6 +222,7 @@ my %Codes = (
     SZ => ['268',   '00',  undef], # Swaziland
     TC => [  '1',  '011',    '1'], # Turks and Caicos Islands
     TD => ['235',   '15',  undef], # Chad
+    TF => ['596',   '00',    '0'], # French Southern Territories
     TG => ['228',   '00',  undef], # Togo
     TH => [ '66',  '001',    '0'], # Thailand
     TJ => ['992',  '810',    '8'], # Tajikistan (IDD really 8**10)
