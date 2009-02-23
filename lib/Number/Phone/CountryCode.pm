@@ -98,6 +98,7 @@ my %Codes = (
     GI => ['350',   '00',  undef],     # Gibraltar
     GL => ['299',   '00',  undef],     # Greenland
     GM => ['220',   '00',  undef],     # Gambia
+    GN => ['224',   '00',    '0'],     # Guinea
     GP => ['590',   '00',  undef],     # Guadeloupe
     GQ => ['240',   '00',  undef],     # Equatorial Guinea
     GR => [ '30',   '00',  undef],     # Greece

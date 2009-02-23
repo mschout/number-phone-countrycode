@@ -2,7 +2,8 @@ Revision history for Number::Phone::CountryCode.
 
 CURRENT
     - Add support for: Cocos (Keeling) Islands (CC), Congo (CG),
-      Cook Islands (CK), Cuba (CU), Dominica (DM), Spain (ES), Georgia (GE)
+      Cook Islands (CK), Cuba (CU), Dominica (DM), Spain (ES), Georgia (GE),
+      Guinea (GN)
 
 0.02  Sat Feb 20 2009
     - Makefile.PL: only require version 5.008
