@@ -4,7 +4,7 @@
 #
 
 use strict;
-use Test::More tests => 1181;
+use Test::More tests => 1186;
 
 use_ok('Number::Phone::CountryCode') or exit 1;
 
@@ -120,6 +120,7 @@ GU:1:011:1
 GW:245:00:
 GY:592:001:0
 HK:852:001:
+HM:692:00:0
 HN:504:00:0
 HR:385:00:0
 HT:509:00:0

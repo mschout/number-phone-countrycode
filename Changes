@@ -7,7 +7,8 @@ CURRENT
       Mali (ML), Laos (LA), Malta (MT), Myanmar (MM), Nepal (NP),
       Oman (OM), Russia (RU), Svalbard and Jan Mayen (SJ), Syria (SY),
       Tonga Islands (TO), Zambia (ZM), Bouvet Island,
-      British Indian Ocean Territory (IO)
+      British Indian Ocean Territory (IO),
+      Heard Island & Mcdonald Islands (HM)
 
 0.02  Sat Feb 20 2009
     - Makefile.PL: only require version 5.008

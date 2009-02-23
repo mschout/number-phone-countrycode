@@ -108,6 +108,7 @@ my %Codes = (
     GW => ['245',   '00',  undef], # Guinea-Bissau
     GY => ['592',  '001',    '0'], # Guyana
     HK => ['852',  '001',  undef], # Hong Kong
+    HM => ['692',   '00',    '0'], # Heard Island & McDonald Islands
     HN => ['504',   '00',    '0'], # Honduras
     HR => ['385',   '00',    '0'], # Croatia
     HT => ['509',   '00',    '0'], # Haiti
