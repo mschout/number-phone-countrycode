@@ -9,7 +9,7 @@ CURRENT
       Tonga Islands (TO), Zambia (ZM), Bouvet Island,
       British Indian Ocean Territory (IO),
       Heard Island & Mcdonald Islands (HM),
-      French Southern Territories (TF)
+      French Southern Territories (TF), Pitcairn (PN)
 
 0.02  Sat Feb 20 2009
     - Makefile.PL: only require version 5.008

@@ -190,6 +190,7 @@ my %Codes = (
     PK => [ '92',   '00',    '0'], # Pakistan
     PL => [ '48',   '00',    '0'], # Poland
     PM => ['508',   '00',    '0'], # Saint Pierre and Miquelon
+    PN => ['872',   '00',    '0'], # Pitcairn
     PR => [  '1',  '011',    '1'], # Puerto Rico
     PS => ['970',   '00',    '0'], # Palestinian Territory, Occupied
     PT => ['351',   '00',  undef], # Portugal
