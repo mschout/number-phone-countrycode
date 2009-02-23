@@ -81,6 +81,7 @@ my %Codes = (
     EG => [ '20',   '00',    '0'],     # Egypt
     EH => ['212',   '00',    '0'],     # Western Sahara
     ER => ['291',   '00',    '0'],     # Eritrea
+    ES => [ '34',   '00',  undef],     # Spain
     ET => ['251',   '00',    '0'],     # Ethiopia
     FI => ['358',   '00',    '0'],     # Finland
     FJ => ['679',   '00',  undef],     # Fiji
