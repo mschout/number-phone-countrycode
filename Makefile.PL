@@ -8,6 +8,7 @@ WriteMakefile(
     PREREQ_PM         => {
         'Class::Accessor' => 0
     },
+    LICENSE           => 'perl_5',
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Number/Phone/CountryCode.pm', # retrieve abstract from module
        AUTHOR         => 'Michael Schout <mschout@gkg.net>') : ()),
