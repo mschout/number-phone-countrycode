@@ -1,6 +1,7 @@
 Revision history for Number::Phone::CountryCode.
 
 {{$NEXT}}
+    - fix MANIFEST
 
 0.03  2017-07-31
     - Mark this module as DEPRECATED in favor of Number::Phone::Country
