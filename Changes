@@ -1,6 +1,8 @@
 Revision history for Number::Phone::CountryCode.
 
 {{$NEXT}}
+
+0.03  2017-07-31
     - Mark this module as DEPRECATED in favor of Number::Phone::Country
     - Add support for: Cocos (Keeling) Islands (CC), Congo (CG),
       Cook Islands (CK), Cuba (CU), Dominica (DM), Spain (ES), Georgia (GE),
