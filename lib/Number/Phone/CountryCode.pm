@@ -1,6 +1,11 @@
+# COPYRIGHT
+
 package Number::Phone::CountryCode;
 
+# ABSTRACT: DEPRECATED - Country Phone Dialing Prefixes
+
 use strict;
+use warnings;
 use base qw(Class::Accessor);
 
 __PACKAGE__->mk_ro_accessors(qw(country
@@ -8,7 +13,8 @@ __PACKAGE__->mk_ro_accessors(qw(country
                                 idd_prefix
                                 ndd_prefix));
 
-our $VERSION = '0.02';
+warnings::warnif('deprecated',
+    'Number::Phone::CountryCode is deprecated.  Please use Number::Phone::Country instead.');
 
 # Codes hash
 # ISO code maps to 3 element array containing:
@@ -258,11 +264,82 @@ my %Codes = (
     ZW => ['263',  '110',    '0'], # Zimbabwe
 );
 
-=head1 NAME
+=method new($country)
 
-Number::Phone::CountryCode - Country phone dialing prefixes
+Constructs a new Number::Phone::CountryCode object.  C<$country> is the two
+digit ISO 3166 country code for the country you wish to look up.  Returns
+C<undef> if the country code did not match one of the supported countries.
+
+=cut
+
+sub new {
+    my ($class, $country) = @_;
+
+    $country = uc $country;
+
+    my $data = $Codes{$country};
+
+    # return nothing if no data for this country code.
+    return unless defined $data;
+
+    return $class->SUPER::new({
+        country      => $country,
+        country_code => $data->[0],
+        idd_prefix   => $data->[1],
+        ndd_prefix   => $data->[2]
+    });
+}
+
+=method country
+
+the ISO 3166 country code for this country
+
+=method country_code
+
+The national prefix for this country
+
+=method ndd_prefix
+
+The NDD prefix for this country. Note that this might be undef if no prefix is
+necessary.
+
+=method idd_prefix
+
+The IDD prefix for this country.  Note that this might be undef if no prefix is
+necessary.
+
+=method countries
+
+Returns a list of all ISO 3166 country codes supported by this module.
+
+=cut
+
+sub countries {
+    return sort keys %Codes;
+}
+
+=method is_supported($country)
+
+Returns true if the given country is supported, false otherwise.  C<$country>
+is a 2 character ISO 3166 country code.
+
+=cut
+
+sub is_supported {
+    my ($class, $code) = @_;
+
+    $code = uc $code;
+
+    return defined $Codes{$code} ? 1 : 0;
+}
+
+1;
+
+__END__
 
 =head1 SYNOPSIS
+
+B<THIS MODULE IS DEPRECATED>.  Please use L<Number::Phone::Country> instead.
 
  use Number::Phone::CountryCode;
 
@@ -280,6 +357,11 @@ Number::Phone::CountryCode - Country phone dialing prefixes
 See below for description of the country/IDD/NDD prefixes.
 
 =head1 DESCRIPTION
+
+=head2 This Module is Deprecated
+
+This module is deprecated and its functionality has been integrated into
+L<Number::Phone::Country>.  Please use L<Number::Phone::Country> instead.
 
 This module provides an interface to lookup country specific dialing prefixes.
 These prefixes are useful when working with phone numbers from different
@@ -304,135 +386,3 @@ This is the prefix needed to make a call B<from a country> to another country.
 This is followed by the country code for the country you are calling.  For
 example, when calling another country from the US, you must dial 011.
 
-=cut
-
-=head1 CONSTRUCTOR
-
-=over 4
-
-=item new($country)
-
-Constructs a new Number::Phone::CountryCode object.  C<$country> is the two
-digit ISO 3166 country code for the country you wish to look up.  Returns
-C<undef> if the country code did not match one of the supported countries.
-
-=back
-
-=cut
-
-sub new {
-    my ($class, $country) = @_;
-
-    $country = uc $country;
-
-    my $data = $Codes{$country};
-
-    # return nothing if no data for this country code.
-    return unless defined $data;
-
-    return $class->SUPER::new({
-        country      => $country,
-        country_code => $data->[0],
-        idd_prefix   => $data->[1],
-        ndd_prefix   => $data->[2]
-    });
-}
-
-=head1 METHODS
-
-The following methods are available
-
-=over 4
-
-=item country
-
-the ISO 3166 country code for this country
-
-=item country_code
-
-The national prefix for this country
-
-=item ndd_prefix
-
-The NDD prefix for this country. Note that this might be undef if no prefix is
-necessary.
-
-=item idd_prefix
-
-The IDD prefix for this country.  Note that this might be undef if no prefix is
-necessary.
-
-=back
-
-=cut
-
-=head1 CLASS METHODS
-
-The following class methods are available (may be called without constructing
-an object).
-
-=over 4
-
-=item countries
-
-Returns a list of all ISO 3166 country codes supported by this module.
-
-=cut
-
-sub countries {
-    return sort keys %Codes;
-}
-
-=item is_supported($country)
-
-Returns true if the given country is supported, false otherwise.  C<$country>
-is a 2 character ISO 3166 country code.
-
-=cut
-
-sub is_supported {
-    my ($class, $code) = @_;
-
-    $code = uc $code;
-
-    return defined $Codes{$code} ? 1 : 0;
-}
-
-=back
-
-=cut
-
-1;
-
-__END__
-
-=head1 SOURCE
-
-You can contribute to or fork this project via github:
-
-http://github.com/mschout/number-phone-countrycode/tree/master
-
- git clone git://github.com/mschout/number-phone-countrycode.git
-
-=head1 BUGS / FEEDBACK
-
-Please report any bugs or feature requests to
-bug-number-phone-countrycode@rt.cpan.org, or through the web interface at
-http://rt.cpan.org
-
-I welcome feedback, and additions/corrections to the country code data
-contained within this module.
-
-=head1 AUTHOR
-
-Michael Schout, E<lt>mschout@gkg.net<gt>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright (C) 2009 by Michael Schout
-
-This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself, either Perl version 5.8.0 or, at your option,
-any later version of Perl 5 you may have available.
-
-=cut
